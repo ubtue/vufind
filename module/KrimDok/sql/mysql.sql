@@ -12,7 +12,7 @@ CREATE TABLE full_text_cache_urls (
     domain VARCHAR(255) NOT NULL,
     error_message MEDIUMTEXT,
     PRIMARY KEY (id, url),
-    CONSTRAINT id FOREIGN KEY (id) REFERENCES full_text_cache (id) ON DELETE CASCADE,
+    CONSTRAINT id FOREIGN KEY (id) REFERENCES full_text_cache (id) ON DELETE CASCADE ON UPDATE CASCADE,
     INDEX domain (domain),
     INDEX error_message (error_message(100))
 ) CHARACTER SET utf8mb4;
