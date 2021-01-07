@@ -26,6 +26,7 @@ return [
         ],
     ],
     'css' => [
+        'vendor/introjs.min.css',
         'vendor/jquery-ui.min.css',
         'vendor/keyboard-basic.css',
         'vendor/keyboard.css',
@@ -36,6 +37,7 @@ return [
     ],
     'js' => [
         'tuefind.js',
+        'vendor/intro.min.js',
         'vendor/jquery-ui.min.js',
         'vendor/jquery.keyboard.js',
         'vendor/keyboard-layouts-greywyvern.js',
