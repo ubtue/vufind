@@ -1,4 +1,7 @@
 <?php
 return [
-    'extends' => 'sandal'
+    'extends' => 'sandal',
+    'css' => [
+        'biodaten.css'
+    ],
 ];

@@ -1,0 +1,20 @@
+header {
+  background-color: white;
+}
+
+.nav a {
+  color: black !important;
+}
+
+.navbar-brand {
+  background-image: url('../../biodaten/images/biodaten_logo.jpg') !important;
+}
+
+.searchHomeContent {
+  background-color: #a51e37;
+  background-image: none;
+}
+
+.searchHomeContent:after {
+   content: none;
+}
