@@ -3,7 +3,13 @@
 namespace BioDATEN\Module\Config;
 
 $config = [
-
+    'vufind' => [
+        'plugin_managers' => [
+            'recorddriver' => [
+                'solrdefault' => 'BioDATEN\RecordDriver\SolrDefault'
+            ],
+        ],
+    ],
 ];
 
 $recordRoutes = [];
