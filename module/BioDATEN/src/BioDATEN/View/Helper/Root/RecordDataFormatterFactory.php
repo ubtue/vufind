@@ -16,15 +16,18 @@ class RecordDataFormatterFactory extends \VuFind\View\Helper\Root\RecordDataForm
         $spec = new SpecBuilder();
 
         $spec->setLine('Project', 'getProject');
-        $spec->setLine('Organism', 'getOrganism');
+        $spec->setLine('Experiment Type', 'getExperimentType');
+        $spec->setTemplateLine('Organism', 'getOrganism', 'data-organism.phtml');
         $spec->setLine('Organ', 'getOrgan');
         $spec->setLine('Sample Type', 'getSampleType');
+        $spec->setLine('Platform', 'getPlatform');
         $spec->setLine('Study Type', 'getStudyType');
-        $spec->setLine('Experiment Type', 'getExperimentType');
-        $spec->setLine('Institution', 'getInstitution');
         $spec->setLine('Keywords', 'getKeywords');
-        $spec->setLine('License', 'getLicense');
         $spec->setLine('Access Right', 'getAccessRight');
+        $spec->setLine('License', 'getLicense');
+        $spec->setLine('Creation Date', 'getCreationDate');
+        $spec->setLine('Creator', 'getCreator');
+        $spec->setLine('Institution', 'getInstitution');
 
         return $spec->getArray();
     }

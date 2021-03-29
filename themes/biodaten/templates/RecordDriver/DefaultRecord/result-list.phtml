@@ -26,29 +26,26 @@
       </div>
 
       <!-- Start of BioDATEN extensions -->
-      <div>
-        <?php if ($project = $this->driver->getProject()): ?>
-          <?=$project?>
-        <?php endif; ?>
-      </div>
+      <?php if ($project = $this->driver->getProject()): ?>
+        <div><?=$project?></div>
+      <?php endif; ?>
 
-      <div>
-        <?php if ($organism = $this->driver->getOrganism()): ?>
-          <?=$organism?>
-        <?php endif; ?>
-      </div>
+      <?php if ($organism = $this->driver->getOrganism()): ?>
+        <div><?=$organism?></div>
+      <?php endif; ?>
 
-      <div>
-        <?php if ($organ = $this->driver->getOrgan()): ?>
-          <?=$organ?>
-        <?php endif; ?>
-      </div>
+      <?php if ($organ = $this->driver->getOrgan()): ?>
+        <div><?=$organ?></div>
+      <?php endif; ?>
 
-      <div>
-        <?php if ($institution = $this->driver->getInstitution()): ?>
-          <?=$institution?>
-        <?php endif; ?>
-      </div>
+      <?php if ($institution = $this->driver->getInstitution()): ?>
+        <div><?=$institution?></div>
+      <?php endif; ?>
+
+      <?php if ($creationDate = $this->driver->getCreationDate()): ?>
+        <div><?=$creationDate?></div>
+      <?php endif; ?>
+
 
       <!-- End of BioDATEN extensions -->
 

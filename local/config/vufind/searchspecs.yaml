@@ -238,21 +238,25 @@
 #      - title_full_unstemmed^450
 #    FilterQuery: "format:Journal OR format:Article"
 
-#Title:
-#  DismaxFields:
+Title:
+  DismaxFields:
 #    - title_short^500
 #    - title_full_unstemmed^450
 #    - title_full^400
-#    - title^300
+    - title^300
 #    - title_alt^200
 #    - title_new^100
 #    - title_old
 #    - series^100
 #    - series2
-#  DismaxHandler: edismax
+#  DismaxHandler: search
 #  ExactSettings:
 #    DismaxFields:
 #      - title_full_unstemmed^450
+
+Creator:
+  DismaxFields:
+    - creator^300
 
 #Series:
 #  DismaxFields:
@@ -266,6 +270,7 @@ AllFields:
 #    - title_full_unstemmed^600
 #    - title_full^400
     - title^500
+    - project^100
 #    - title_alt^200
 #    - title_new^100
 #    - series^50
@@ -285,7 +290,7 @@ AllFields:
 #    - isbn
 #    - issn
 #    - long_lat_display
-#  DismaxHandler: edismax
+#  DismaxHandler: search
 #  ExactSettings:
 #    DismaxFields:
 #      - title_full_unstemmed^600

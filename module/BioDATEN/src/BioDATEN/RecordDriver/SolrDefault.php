@@ -6,7 +6,6 @@ namespace BioDATEN\RecordDriver;
  * Omitted so far / trying to re-use standard fields:
  * - id (+uuid)
  * - title
- * - creator
  */
 class SolrDefault extends \VuFind\RecordDriver\SolrDefault
 {
@@ -38,6 +37,11 @@ class SolrDefault extends \VuFind\RecordDriver\SolrDefault
     public function getCreationDate()
     {
         return $this->fields['creation_date'] ?? '';
+    }
+
+    public function getCreator()
+    {
+        return $this->fields['creator'] ?? '';
     }
 
     public function getDescriptions()
