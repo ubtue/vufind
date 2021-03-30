@@ -30,7 +30,7 @@
         <div><?=$project?></div>
       <?php endif; ?>
 
-      <?php if ($organism = $this->driver->getOrganism()): ?>
+      <?php if ($organism = $this->biodaten()->getOrganism($this->driver)): ?>
         <div><?=$organism?></div>
       <?php endif; ?>
 
