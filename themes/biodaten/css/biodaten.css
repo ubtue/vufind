@@ -3,7 +3,8 @@ header {
 }
 
 .nav a {
-  color: black !important;
+  color: #32414B !important;
+  text-decoration: none;
 }
 
 .navbar-brand {
@@ -19,6 +20,28 @@ header {
    content: none;
 }
 
+#searchForm_lookfor {
+  width: inherit;
+}
+
 .form-control {
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2) !important;
+}
+
+#searchForm > .btn-primary, #searchForm > .btn-primary:hover {
+  background-color: #32414B;
+  color: #fff;
+}
+
+#searchForm > .btn-primary:hover {
+  border-color: white;
+}
+
+#search-sidebar {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.form-control:focus {
+  border-bottom-color: #B4A069;
 }
