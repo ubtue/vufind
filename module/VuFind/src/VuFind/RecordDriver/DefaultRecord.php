@@ -958,6 +958,24 @@ class DefaultRecord extends AbstractBase
         return $authors[0] ?? '';
     }
 
+    static private $lang_code = $this->tuefind()->getTranslatorLocale();
+
+    // Replaces any occurrences of "v.Chr." in $s w/ the version for the currently selected user-interface language.
+    static private function MapBeforeChrist(string $s): string {
+        global $lang_code;
+        static $lang_code_to_bc_abbreviations_map = array(
+            "en" => "BC",
+            "de" => "v.Chr.",
+            "fr" => "avant J.-C.",
+            "it" => "a.C.",
+            "cn" => "公元前"
+        );
+        if (!array_key_exists($lang_code, $lang_code_to_bc_abbreviations_map))
+            return $s;
+        $bc_abbreviation = $lang_code_to_bc_abbreviations_map[$lang_code];
+        return str_replace("v.Chr.", $bc_abbreviation, $s);
+    }
+
     /**
      * Get the main authors of the record.
      *
@@ -966,7 +984,7 @@ class DefaultRecord extends AbstractBase
     public function getPrimaryAuthors()
     {
         return isset($this->fields['author'])
-            ? (array)$this->fields['author'] : [];
+            ? (array)MapBeforeChrist($this->fields['author']) : [];
     }
 
     /**
