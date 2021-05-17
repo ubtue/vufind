@@ -28,6 +28,10 @@ class RecordDataFormatterFactory extends \VuFind\View\Helper\Root\RecordDataForm
         $spec->setLine('Creation Date', 'getCreationDate');
         $spec->setLine('Creator', 'getCreator');
         $spec->setLine('Institution', 'getInstitution');
+        $spec->setLine('External Link', 'getMetsDocumentId', null,
+            ['itemPrefix' => '<a href="https://132.230.223.164/records/',
+             'itemSuffix' => '" target="_blank">METS Document</a>']
+        );
 
         return $spec->getArray();
     }
