@@ -966,7 +966,7 @@ class DefaultRecord extends AbstractBase
     public function getPrimaryAuthors()
     {
         return isset($this->fields['author'])
-            ? (array)MapBeforeChrist($this->fields['author']) : [];
+            ? (array)$this->fields['author'] : [];
     }
 
     /**
