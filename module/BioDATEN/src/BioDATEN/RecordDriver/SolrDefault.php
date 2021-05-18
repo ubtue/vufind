@@ -160,6 +160,11 @@ class SolrDefault extends \VuFind\RecordDriver\SolrDefault
         return $this->fields['sample_type'] ?? '';
     }
 
+    public function getSchemaOrgFormatsArray()
+    {
+        return ['CreativeWork', 'MedicalStudy', 'MedicalTest'];
+    }
+
     public function getStudyType()
     {
         return $this->fields['study_type'] ?? '';
