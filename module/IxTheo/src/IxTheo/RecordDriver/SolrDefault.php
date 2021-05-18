@@ -152,6 +152,22 @@ class SolrDefault extends \TueFind\RecordDriver\SolrMarc
         return $data;
     }
 
+    // Replaces any occurrences of "v.Chr." in $s w/ the version for the currently selected user-interface language.
+    static private function MapBeforeChrist(string $s): string {
+        static $lang_code = this->tuefind()->getTranslatorLocale();
+        static $lang_code_to_bc_abbreviations_map = array(
+            "en" => "BC",
+            "de" => "v.Chr.",
+            "fr" => "avant J.-C.",
+            "it" => "a.C.",
+            "cn" => "公元前"
+        );
+        $bc_abbreviation = $lang_code_to_bc_abbreviations_map[$lang_code] ?? null;
+        if ($bc_abbreviation === null)
+            return $s;
+        return str_replace("v.Chr.", $bc_abbreviation, $s);
+    }
+
     /**
      * Get corporation.
      *
