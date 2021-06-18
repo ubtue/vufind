@@ -459,4 +459,8 @@ class TueFind extends \Laminas\View\Helper\AbstractHelper
          }
          return false;
     }
+
+    public function getKfL() {
+        return $this->container->get(\TueFind\Service\KfL::class);
+    }
 }
